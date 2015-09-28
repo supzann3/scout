@@ -66,3 +66,5 @@ end
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'devise'
 gem 'airbrake'
+gem 'figaro'
+gem 'yelp', require: 'yelp'
