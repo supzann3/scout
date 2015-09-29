@@ -1,11 +1,12 @@
 class YelpApi
   attr_reader :client, :params, :location, :results
-  def initialize
+  def initialize(tags = []
     @client = Yelp::Client.new({ consumer_key: ENV["Consumer_Key"],
                 consumer_secret: ENV["Consumer_Secret"],
                 token: ENV["Token"],
                 token_secret: ENV["Token_Secret"]
               })
+    @tags = tags
     set_params
     set_location
   end
@@ -13,7 +14,7 @@ class YelpApi
   def set_params
     @params = { term: 'food',
                 limit: 10,
-                category_filter: 'bar'
+                category_filter: tags
               }
   end
 

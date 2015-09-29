@@ -1,0 +1,6 @@
+<%= form_tag({controller: "itineraries", action: "create"}) do %>
+  <%= select_tag "tags[aliases][]", options_from_collection_for_select(Tag.all, :alias, :name) %>
+  <%= select_tag "tags[aliases][]", options_from_collection_for_select(Tag.all, :alias, :name) %>
+  <%= select_tag "tags[aliases][]", options_from_collection_for_select(Tag.all, :alias, :name) %>
+  <%= submit_tag %>
+<% end %>
