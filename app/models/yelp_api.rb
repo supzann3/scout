@@ -21,6 +21,6 @@ class YelpApi
   end
 
   def search
-    @results = @client.search(@location, @params)
+    @results = @client.search(@location, @params).businesses
   end
 end
