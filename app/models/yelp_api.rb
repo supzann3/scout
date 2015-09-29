@@ -6,14 +6,13 @@ class YelpApi
                 token: ENV["Token"],
                 token_secret: ENV["Token_Secret"]
               })
-    set_params
     set_location
   end
 
-  def set_params
-    @params = { term: 'food',
-                limit: 10,
-                category_filter: 'bar'
+  def set_params(tag)
+    a = Tag.find(tag)
+    @params = { limit: 1,
+                category_filter: a.alias
               }
   end
 
