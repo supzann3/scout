@@ -29,6 +29,6 @@ tag_names={"Active Life"=>"active",
  "Restaurants"=>"restaurants",
  "Shopping"=>"shopping"}
 
- tag_names.each |k, v|
+ tag_names.each do |k, v|
   Tag.create(name: k, alias: v)
 end
