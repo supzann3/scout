@@ -1,13 +1,6 @@
 class ItinerariesController < ApplicationController
-  def show
-  end
-
-  def new
-    @itinerary = Itinerary.new
-  end
-
   def create
-    byebug
-    Activity.new(params["tags"]["aliases"])
+    @itinerary = Itinerary.new
+    tags = params["tags"]["ids"]
   end
 end

@@ -1,0 +1,13 @@
+<% if current_user %>
+  Logged in as <%= current_user.email %> |
+<% else %>
+  <%= link_to "Sign Up", new_user_registration_path %> |
+  <%= link_to "Log In", new_user_session_path  %>
+<% end %><br><br>
+
+<%= form_tag({controller: "itineraries", action: "create"}) do %>
+  <%= select_tag "tags[ids][]", options_from_collection_for_select(Tag.all, :id, :name) %><br>
+  <%= select_tag "tags[ids][]", options_from_collection_for_select(Tag.all, :id, :name) %><br>
+  <%= select_tag "tags[ids][]", options_from_collection_for_select(Tag.all, :id, :name) %><br>
+  <%= submit_tag %>
+<% end %>
