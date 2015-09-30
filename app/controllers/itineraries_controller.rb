@@ -11,6 +11,11 @@ class ItinerariesController < ApplicationController
       @activities << @yelp.results[k.to_i]
     end
 
+    @hash = Gmaps4rails.build_markers(@activities) do |activity, marker|
+      marker.lat activity.location.coordinate.latitude
+      marker.lng activity.location.coordinate.longitude
+    end
+
     # This should only happen if User clicks save
     # @itinerary = Itinerary.create
     # @itinerary.add_activities(@activities)

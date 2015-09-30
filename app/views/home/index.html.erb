@@ -1,10 +1,3 @@
-<% if current_user %>
-  Logged in as <%= current_user.email %> |
-<% else %>
-  <%= link_to "Sign Up", new_user_registration_path %> |
-  <%= link_to "Log In", new_user_session_path  %>
-<% end %><br><br>
-
 <div id="error-msg"></div>
 
 <%= form_tag(itineraries_path, id: "activity_form") do %>
