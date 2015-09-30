@@ -6,14 +6,12 @@
 <% end %><br><br>
 
 <div id="error-msg"></div>
-<%= form_tag(itineraries_path, id: 'activity_form') do %>
-  <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :id, :name) %>
-<%= form_tag itineraries_path do %>
+
+<%= form_tag(itineraries_path, id: "activity_form") do %>
   <%= radio_button_tag(:sort, 1, true) %>
   <%= label_tag(:sort_1, "Closest Distance") %>
   <%= radio_button_tag(:sort, 2) %>
   <%= label_tag(:sort_2, "Highest Rated") %><br>
-  <% end %>
 
   <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
   <%= text_field_tag "search[ids][0][term]" %><br>
