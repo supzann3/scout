@@ -3,6 +3,8 @@ class ItinerariesController < ApplicationController
     @yelp = YelpApi.new
     @activities = []
     search = params["search"]["ids"]
+    @yelp.set_location(params[:latitude],params[:longitude])
+    binding.pry
     search.each do |k, v|
       @yelp.set_params(v["term"],v["tag"])
       @yelp.search
