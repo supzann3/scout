@@ -100,6 +100,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     google-analytics-rails (0.0.6)
     guard (2.13.0)
       formatador (>= 0.2.4)
@@ -287,6 +288,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   figaro
+  gmaps4rails
   google-analytics-rails
   guard-rspec
   jbuilder (~> 2.0)
