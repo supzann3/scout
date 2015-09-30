@@ -5,9 +5,12 @@
   <%= link_to "Log In", new_user_session_path  %>
 <% end %><br><br>
 
-<%= form_tag({controller: "itineraries", action: "create"}) do %>
-  <%= select_tag "tags[ids][]", options_from_collection_for_select(Tag.all, :id, :name) %><br>
-  <%= select_tag "tags[ids][]", options_from_collection_for_select(Tag.all, :id, :name) %><br>
-  <%= select_tag "tags[ids][]", options_from_collection_for_select(Tag.all, :id, :name) %><br>
-  <%= submit_tag %>
+<%= form_tag itineraries_path do %>
+  <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :id, :name) %>
+  <%= text_field_tag "search[ids][0][term]" %><br>
+  <%= select_tag "search[ids][1][tag]", options_from_collection_for_select(Tag.all, :id, :name) %>
+  <%= text_field_tag "search[ids][1][term]" %><br>
+  <%= select_tag "search[ids][2][tag]", options_from_collection_for_select(Tag.all, :id, :name) %>
+  <%= text_field_tag "search[ids][2][term]" %><br>
+  <%= submit_tag 'Search' %>
 <% end %>
