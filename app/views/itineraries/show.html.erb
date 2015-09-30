@@ -1,0 +1,5 @@
+<% @activities.each do |activity| %>
+  <%= activity.first.name %><br>
+  <%= activity.first.rating %><br>
+  <%= activity.first.location.city %><br>
+<% end %>
