@@ -12,7 +12,7 @@ class YelpApi
   def set_params(term, tag)
     a = Tag.find(tag)
     @params = { term: term,
-                limit: 1,
+                limit: 10,
                 category_filter: a.alias
               }
   end
