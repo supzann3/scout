@@ -6,22 +6,23 @@ class YelpApi
                 token: ENV["Token"],
                 token_secret: ENV["Token_Secret"]
               })
-    set_location
   end
 
-  def set_params(term, tag)
-    a = Tag.find(tag)
+  def set_params(term, tag, sort)
     @params = { term: term,
+                sort: sort,
                 limit: 10,
-                category_filter: a.alias
+                category_filter: tag
               }
   end
 
-  def set_location
-    @location = "New York"
+  def set_location(latitude,longitude)
+    @latitude = latitude
+    @longitude = longitude
+    @location = {latitude: @latitude, longitude: @longitude}
   end
 
   def search
-    @results = @client.search(@location, @params).businesses
+    @results = @client.search_by_coordinates(@location, @params).businesses
   end
 end

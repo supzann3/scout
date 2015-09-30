@@ -1,16 +1,16 @@
 class ItinerariesController < ApplicationController
-  def new  
-  end
 
-  def create 
+  def create
     if params["commit"] == "Search"
       @yelp = YelpApi.new
       @activities = []
       search = params["search"]["ids"]
+      @yelp.set_location(params[:latitude],params[:longitude])
+      sort = params["sort"]
       search.each do |k, v|
-        @yelp.set_params(v["term"],v["tag"])
+        @yelp.set_params(v["term"], v["tag"], sort)
         @yelp.search
-        @activities << @yelp.results.shuffle.pop
+        @activities << @yelp.results[k.to_i]
       end
       render 'show'
     else 
