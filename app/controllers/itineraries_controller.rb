@@ -4,11 +4,11 @@ class ItinerariesController < ApplicationController
     @activities = []
     search = params["search"]["ids"]
     @yelp.set_location(params[:latitude],params[:longitude])
-    binding.pry
+    sort = params["sort"]
     search.each do |k, v|
-      @yelp.set_params(v["term"],v["tag"])
+      @yelp.set_params(v["term"], v["tag"], sort)
       @yelp.search
-      @activities << @yelp.results.shuffle.pop
+      @activities << @yelp.results[k.to_i]
     end
 
     # This should only happen if User clicks save
