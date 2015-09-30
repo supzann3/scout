@@ -1,4 +1,5 @@
 class ItinerariesController < ApplicationController
+
   def create
     @yelp = YelpApi.new
     @activities = []
@@ -10,7 +11,6 @@ class ItinerariesController < ApplicationController
       @yelp.search
       @activities << @yelp.results[k.to_i]
     end
-
     @hash = Gmaps4rails.build_markers(@activities) do |activity, marker|
       marker.lat activity.location.coordinate.latitude
       marker.lng activity.location.coordinate.longitude
