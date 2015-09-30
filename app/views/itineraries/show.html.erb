@@ -1,5 +1,3 @@
 <% @activities.each do |activity| %>
-  <%= activity.name %><br>
-  <%= activity.rating %><br>
-  <%= activity.location.city %><br>
+  <%= activity.name %>,   <%= activity.location.city %>, <%= activity.rating %><br><br>
 <% end %>
