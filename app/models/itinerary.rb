@@ -10,11 +10,4 @@ class Itinerary < ActiveRecord::Base
       ItineraryActivity.create(itinerary_id: self.id, activity_id: result.id)
     end
   end
-
-  def self.google_map(places)
-    Gmaps4rails.build_markers(places) do |activity, marker|
-      marker.lat activity.location.coordinate.latitude
-      marker.lng activity.location.coordinate.longitude
-    end
-  end
 end
