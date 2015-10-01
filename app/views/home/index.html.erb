@@ -12,5 +12,14 @@
   <%= text_field_tag "search[ids][2][term]" %><br>
   <%= hidden_field_tag "latitude" %>
   <%= hidden_field_tag "longitude" %>
+  <div class="input_fields_wrap">
+    <!-- <%= select_tag "search[ids][3][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
+    <%# text_field_tag "search[ids][3][term]" %><br>
+    <%# hidden_field_tag "latitude" %>
+    <%# hidden_field_tag "longitude" %> -->
+    <button class="add_field_button">Add More Fields</button>
+</div>
   <%= submit_tag 'Search' %>
 <% end %>
+
+    <!-- <div><input type="text" name="mytext[]"></div> -->
