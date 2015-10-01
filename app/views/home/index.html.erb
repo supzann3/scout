@@ -3,14 +3,14 @@
   <%= label_tag(:sort_1, "Closest Distance") %>
   <%= radio_button_tag(:sort, 2) %>
   <%= label_tag(:sort_2, "Highest Rated") %><br>
+  <div class="input_fields_wrap">
 
   <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
-  <%= text_field_tag "search[ids][0][term]" %><br>
-  <%= select_tag "search[ids][1][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
-  <%= text_field_tag "search[ids][1][term]" %><br>
-  <%= select_tag "search[ids][2][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
-  <%= text_field_tag "search[ids][2][term]" %><br>
+  <%= text_field_tag "search[ids][0][term]" %><button class="add_field_button">+</button>
   <%= hidden_field_tag "latitude" %>
   <%= hidden_field_tag "longitude" %>
+</div>
   <%= submit_tag 'Search' %>
 <% end %>
+
+    <!-- <div><input type="text" name="mytext[]"></div> -->
