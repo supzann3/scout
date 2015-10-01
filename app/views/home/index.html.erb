@@ -1,16 +1,15 @@
 <%= form_tag(itineraries_path, id: "activity_form") do %>
-  <%= radio_button_tag(:sort, 1, true) %>
-  <%= label_tag(:sort_1, "Closest Distance") %>
-  <%= radio_button_tag(:sort, 2) %>
-  <%= label_tag(:sort_2, "Highest Rated") %><br>
-  <div class="input_fields_wrap">
+    <%= radio_button_tag(:sort, 1, true) %>
+    <%= label_tag(:sort_1, "Closest Distance") %>
+    <%= radio_button_tag(:sort, 2) %>
+    <%= label_tag(:sort_2, "Highest Rated") %><br>
+    <div class="input_fields_wrap">
 
-  <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
-  <%= text_field_tag "search[ids][0][term]" %><button class="add_field_button">+</button>
+    <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
+    <%= text_field_tag "search[ids][0][term]" %><button class="add_field_button">+</button>
+    </div>
   <%= hidden_field_tag "latitude" %>
   <%= hidden_field_tag "longitude" %>
-</div>
   <%= submit_tag 'Search' %>
 <% end %>
-
     <!-- <div><input type="text" name="mytext[]"></div> -->
