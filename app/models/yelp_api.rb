@@ -22,8 +22,16 @@ class YelpApi
     @location = {latitude: @latitude, longitude: @longitude}
   end
 
+  def set_address(string)
+    @address = string
+  end
+
   def search
     @results = @client.search_by_coordinates(@location, @params).businesses
+  end
+
+  def search_by_address
+    @results = @client.search(@address,@params).businesses
   end
 
   def business(id)
