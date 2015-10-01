@@ -4,7 +4,8 @@
   <%= radio_button_tag(:sort, 2) %>
   <%= label_tag(:sort_2, "Highest Rated") %><br>
   <div class="input_fields_wrap">
-
+  <%= label_tag "Enter an address:" %>  
+  <%= text_field_tag "address" %><br>
   <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
   <%= text_field_tag "search[ids][0][term]" %><button class="add_field_button">+</button>
   <%= hidden_field_tag "latitude" %>
