@@ -8,10 +8,8 @@ class ItinerariesController < ApplicationController
       @search.each do |k,v|
         yelp.set_params(v["term"], v["tag"], params["sort"])
         yelp.search
-        @activities << yelp.results[k.to_i]
+        @activities << yelp.results
       end
-
-      @hash = Itinerary.google_map(@activities)
     elsif params["commit"] == 'Save Itinerary'
       @itinerary = Itinerary.create
       @itinerary.add_activities(params["activity_ids"])
