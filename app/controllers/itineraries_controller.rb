@@ -33,13 +33,11 @@ class ItinerariesController < ApplicationController
       else
         @itinerary = Itinerary.create(user_id:current_user.id)
         @itinerary.add_activities(params["activity_ids"])
-        respond_to do |format|
-          format.js
-        end
       end
     end
     respond_to do |format|
       format.html
+      format.js
     end
   end
 
