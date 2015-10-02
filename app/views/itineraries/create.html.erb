@@ -12,8 +12,11 @@
         <% places << activity[i] %>
     <% end %>
   </ol>
-
-<button type="button" id="save-itinerary" onclick="saveItinerary(<%= @activities.count %>)">Save Itinerary</button>
+ <% if user_signed_in? %>
+  <button type="button" id="save-itinerary" onclick="saveItinerary(<%= @activities.count %>)">Save Itinerary</button>
+ <% else %>
+ You need to sign in to save
+<% end %>
 
 <% @hash = Gmaps4rails.build_markers(places) do |a, marker|
             marker.lat a.location.coordinate.latitude
