@@ -26,13 +26,19 @@ class ItinerariesController < ApplicationController
         end
       end
     elsif params["activity_ids"]
-      @itinerary = Itinerary.create
-      @itinerary.add_activities(params["activity_ids"])
-    end
-
-    respond_to do |format|
-      format.html
-      format.js
+      if current_user.nil?
+        session[:itinerary] = params
+        render :js => "window.location = '#{new_user_registration_path}'"
+        respond_to do |format|
+          format.js
+        end
+      else
+        @itinerary = Itinerary.create(user_id:current_user.id)
+        @itinerary.add_activities(params["activity_ids"])
+        respond_to do |format|
+          format.js
+        end
+      end
     end
   end
 
