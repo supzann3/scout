@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
      session[:itinerary] = nil
 
      #redirect
-     flash[:notice] = "Sweet, logged in. Nice list, btw :)"
+     flash[:notice] = "Sweet, logged in. Nice Itinerary, btw :)"
      itinerary_path(@itinerary)
 
    else
