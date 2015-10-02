@@ -3,19 +3,18 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <% places = [] %>
-  <%= form_tag(itineraries_path) do %>
     <ol id="each_activity">
       <% @activities.each_with_index do |activity,i| %>
-        <li id="<%= i %>"><%= activity[i].name %>, <%= activity[i].location.city %>, <%= activity[i].rating %>
+        <li>
+          <div id="item<%= i %>"><%= activity[i].name %>, <%= activity[i].location.city %>, <%= activity[i].rating %>
+          <%= hidden_field_tag "activity_id", activity[i].id %></div>
           <button type="button" onclick="replaceActivity( <%= activity.to_json %>, <%= i %> )">Replace</button>
         </li>
-
-        <%= hidden_field_tag "activity_ids[]", activity[i].id %>
         <% places << activity[i] %>
       <% end %>
     </ol>
-    <%= submit_tag "Save Itinerary" %>
-  <% end %>
+
+<button type="button" id="save-itinerary" onclick="saveItinerary(<%= @activities.count %>)">Save Itinerary</button>
 
 <% @hash = Gmaps4rails.build_markers(places) do |a, marker|
             marker.lat a.location.coordinate.latitude
