@@ -17,12 +17,11 @@ function replaceActivity(array,i) {
   );
 }
 
-function saveItinerary(count) {
-  i = 0;
+function saveItinerary() {
   var activities = [];
-  for (i = 0; i < count; i++) {
-    activities.push($("#item"+i+" #activity_id").val());
-  }
+    $('.ui-sortable-handle #activity_id').each(function() {
+      activities.push($(this).val());
+  });
   $.ajax({
     url: "/itineraries",
     type: "POST",
