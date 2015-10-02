@@ -26,19 +26,15 @@ class ItinerariesController < ApplicationController
           @activities << yelp.results
         end
       end
-
     elsif params["activity_ids"]
       if current_user.nil?
         session[:itinerary] = params
-        # redirect_to new_user_registration_path
+        render :js => "window.location = '#{new_user_registration_path}'"
       else
         @itinerary = Itinerary.create(user_id:current_user.id)
         @itinerary.add_activities(params["activity_ids"])
+        render :js => "window.location = '#{itinerary_path(@itinerary)}'"
       end
-    end
-    respond_to do |format|
-      format.js
-      format.html
     end
   end
 
