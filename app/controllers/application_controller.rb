@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
     @itinerary.add_activities(session[:itinerary]["activity_ids"])
      # clear session
      session[:itinerary] = nil
-
      #redirect
      flash[:notice] = "Sweet, logged in. Nice Itinerary, btw :)"
      itinerary_path(@itinerary)

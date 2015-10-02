@@ -1,15 +1,20 @@
 class ItinerariesController < ApplicationController
+  def new
+  end
+
   def create
     if params["search"]
       yelp = YelpApi.new
       @activities = []
       @search = params["search"]["ids"]
       @user_address = params["address"]
+
       if @user_address == ""
         yelp.set_location(params[:latitude],params[:longitude])
       else
         yelp.set_address(params["address"])
       end
+
       @search.each do |k,v|
         yelp.set_params(v["term"], v["tag"], params["sort"])
         if @user_address == ""
@@ -21,15 +26,20 @@ class ItinerariesController < ApplicationController
         end
       end
 
-    elsif params["commit"] == 'Save Itinerary'
+    elsif params["activity_ids"]
       if current_user.nil?
         session[:itinerary] = params
         redirect_to new_user_registration_path
       else
         @itinerary = Itinerary.create(user_id:current_user.id)
         @itinerary.add_activities(params["activity_ids"])
-        render 'show'
+        respond_to do |format|
+          format.js
+        end
       end
+    end
+    respond_to do |format|
+      format.html
     end
   end
 
