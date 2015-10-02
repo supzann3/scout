@@ -5,7 +5,7 @@
     <ol id="each_activity">
       <% @activities.each_with_index do |activity,i| %>
         <li>
-          <div class="id="item<%= i %>"><%= activity[i].name %>, <%= activity[i].location.city %>, <%= activity[i].rating %>
+          <div class="item" id="item<%= i %>"><%= activity[i].name %>, <%= activity[i].location.city %>, <%= activity[i].rating %>
           <%= hidden_field_tag "activity_id", activity[i].id %></div>
           <button type="button" onclick="replaceActivity( <%= activity.to_json %>, <%= i %> )">Replace</button>
         </li>
