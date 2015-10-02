@@ -23,4 +23,9 @@ class ApplicationController < ActionController::Base
    end
 
  end
+
+ def lat_lng
+    @lat_lng = cookies[:lat_lng].split("|") unless cookies[:lat_lng] == nil
+  end
+
 end

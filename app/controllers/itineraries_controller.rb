@@ -5,12 +5,13 @@ class ItinerariesController < ApplicationController
   def create
     if params["search"]
       yelp = YelpApi.new
+      @location_array = lat_lng
       @activities = []
       @search = params["search"]["ids"]
       @user_address = params["address"]
 
       if @user_address == ""
-        yelp.set_location(params[:latitude],params[:longitude])
+        yelp.set_location(@location_array)
       else
         yelp.set_address(params["address"])
       end
