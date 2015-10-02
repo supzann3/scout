@@ -13,11 +13,11 @@
       <% i = 0 if i == 10 %>
     <% end %>
   </ol>
-  <% if user_signed_in? %>
+  <%# if user_signed_in? %>
   <%= submit_tag "Save Itinerary" %>
-  <% else %>
-   You need to log in
-  <% end %>
+  <%# else %>
+   <%#You need to log in>
+  <%# end %>
 <% end %>
 
 <% @hash = Gmaps4rails.build_markers(places) do |a, marker|
