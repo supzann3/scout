@@ -16,9 +16,9 @@ class YelpApi
               }
   end
 
-  def set_location(latitude,longitude)
-    @latitude = latitude
-    @longitude = longitude
+  def set_location(location_array)
+    @latitude = location_array[0]
+    @longitude = location_array[1]
     @location = {latitude: @latitude, longitude: @longitude}
   end
 

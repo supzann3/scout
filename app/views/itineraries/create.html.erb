@@ -5,7 +5,7 @@
     <ol id="each_activity">
       <% @activities.each_with_index do |activity,i| %>
         <li>
-          <div id="item<%= i %>"><%= activity[i].name %>, <%= activity[i].location.city %>, <%= activity[i].rating %>
+          <div class="id="item<%= i %>"><%= activity[i].name %>, <%= activity[i].location.city %>, <%= activity[i].rating %>
           <%= hidden_field_tag "activity_id", activity[i].id %></div>
           <button type="button" onclick="replaceActivity( <%= activity.to_json %>, <%= i %> )">Replace</button>
         </li>
@@ -13,11 +13,13 @@
     <% end %>
   </ol>
 
-  <button type="button" id="save-itinerary" onclick="saveItinerary(<%= @activities.count %>)">Save Itinerary</button>
+  <button type="button" id="save-itinerary" onclick="saveItinerary()">Save Itinerary</button>
 
 <% @hash = Gmaps4rails.build_markers(places) do |a, marker|
-            marker.lat a.location.coordinate.latitude
-            marker.lng a.location.coordinate.longitude
+            if a.location.keys.include?("coordinate")
+              marker.lat a.location.coordinate.latitude
+              marker.lng a.location.coordinate.longitude
+            end
           end %>
 
 <div style='width: 800px;'>
