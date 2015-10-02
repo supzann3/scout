@@ -2,7 +2,6 @@ $(document).ready(function(){
   onLoad();
 });
 
-
 function onLoad() {
   $("#activity_form").submit(function(e){
     e.preventDefault();
