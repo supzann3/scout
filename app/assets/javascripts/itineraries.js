@@ -1,10 +1,4 @@
-$(document).ready(function(){
-
-});
-
 function replaceActivity(array,i) {
-  var x = document.createElement(array[i+1].hash.id);
-  x.setAttribute("type", "hidden");
   $("#item"+i).html(
     array[i+1].hash.name + array[i+1].hash.location.city + array[i+1].hash.rating +
     "<input type='hidden' name='activity_id' id='activity_id' value=" + array[i+1].hash.id + ">"
