@@ -39,7 +39,13 @@ class ItinerariesController < ApplicationController
   end
 
   def show
+    @biz_info = []
     @itinerary = Itinerary.find(params[:id])
     @activities = @itinerary.activities
+    yelp = YelpApi.new
+    @activities.each do |act|
+      yelp.business(act.google_id)
+      @biz_info << yelp.results
+    end
   end
 end

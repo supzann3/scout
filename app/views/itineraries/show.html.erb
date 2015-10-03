@@ -1,5 +1,9 @@
 <ol>
-<% @itinerary.activities.each do |activity| %>
-  <li><%= activity.google_id %></li>
+  <% @biz_info.each do |info| %>
+  <li><p>
+  <a href="<%= info.url %>"><%= info.name %></a><br>
+    <%= info.display_phone %><br>
+    <%= info.location.display_address.split(", ").join(", ") %>
+    </p></li>
 <% end %>
 </ol>
