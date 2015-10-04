@@ -80,3 +80,10 @@ function saveItinerary() {
     }
   });
 }
+
+// $(document).ready(funtion(){
+//
+//   $('#all-itineraries').click(function(e)){
+// 
+//   }
+// })

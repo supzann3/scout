@@ -3,7 +3,7 @@
 
 <div class="col-md-4">
   <%= label_tag 'Name of Your Itinerary' %>
-    <%= text_field_tag(:itineraryName, nil, placeholder: 'Name') %>
+    <%= text_field_tag(:itineraryName, nil, placeholder: 'Name', required:"required") %>
   <ol id="each_activity">
     <% @activities.each_with_index do |activity,i| %>
       <li id="li<%= i %>">

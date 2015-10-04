@@ -1,4 +1,9 @@
 class ItinerariesController < ApplicationController
+
+  def index
+    @all=Itinerary.all
+  end
+
   def new
   end
 
@@ -32,7 +37,6 @@ class ItinerariesController < ApplicationController
         render :js => "window.location = '#{new_user_registration_path}'"
       else
         @itinerary = Itinerary.create(name:params["name"],user_id:current_user.id)
-        binding.pry
         @itinerary.add_activities(params["activity_ids"])
         render :js => "window.location = '#{itinerary_path(@itinerary)}'"
       end
@@ -40,6 +44,7 @@ class ItinerariesController < ApplicationController
   end
 
   def show
+    @all=Itinerary.all
     @biz_info = []
     @itinerary = Itinerary.find(params[:id])
     @activities = @itinerary.activities
