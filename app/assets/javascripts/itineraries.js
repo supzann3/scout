@@ -81,9 +81,11 @@ function saveItinerary() {
   });
 }
 
-// $(document).ready(funtion(){
-//
-//   $('#all-itineraries').click(function(e)){
-// 
-//   }
-// })
+$(document).ready(function(){
+  $('#all-itineraries-button').click(function(e){
+    $('#all-itineraries').toggle();
+  });
+  $('#current-itinerary-button').click(function(e){
+    $('#current-itinerary').toggle();
+  });
+});
