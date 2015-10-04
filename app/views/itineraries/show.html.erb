@@ -6,13 +6,11 @@
 
 
 <div id="all-itineraries">
-  <ul>
   <% @all.each do |itinerary|%>
     <% if itinerary.activities.length>0 && itinerary.name!=""%>
-      <li><%= link_to "#{itinerary.name}","/itineraries/#{itinerary.id}", method:"get"  %> </li>
+      <%= link_to "#{itinerary.name}","/itineraries/#{itinerary.id}", method:"get"  %> <br>
     <% end %>
   <% end %>
-</ul>
 </div>
 
 <div class="panel panel-default col-xs-12 col-ms-4">
