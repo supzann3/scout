@@ -69,10 +69,11 @@ function saveItinerary() {
     $('.ui-sortable-handle #activity_id').each(function() {
       activities.push($(this).val());
   });
+  var itineraryName=$('#itineraryName').val();
   $.ajax({
     url: "/itineraries",
     type: "POST",
-    data: {activity_ids: activities},
+    data: {name:itineraryName,activity_ids: activities},
     dataType: "script",
     success: function(resp){
       $("#save-itinerary").replaceWith("");

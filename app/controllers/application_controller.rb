@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
    # save list if there is a temp_list in the session
   if session[:itinerary].present?
-    @itinerary = Itinerary.create(user_id:current_user.id)
+    @itinerary = Itinerary.create(name:params["name"],user_id:current_user.id)
     @itinerary.add_activities(session[:itinerary]["activity_ids"])
     session[:itinerary] = nil
     flash[:notice] = "Sweet, logged in. Nice Itinerary, btw :)"
