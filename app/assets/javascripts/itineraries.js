@@ -85,7 +85,13 @@ $(document).ready(function(){
   $('#all-itineraries-button').click(function(e){
     $('#all-itineraries').toggle();
   });
+
   $('#current-itinerary-button').click(function(e){
     $('#current-itinerary').toggle();
   });
+
+  // $('input:text').bind('focus blur', function() {
+  //    $(this).toggleClass('red');
+  // });
+
 });
