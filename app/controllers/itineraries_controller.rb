@@ -44,7 +44,6 @@ class ItinerariesController < ApplicationController
   end
 
   def show
-    @all=Itinerary.all
     @biz_info = []
     @itinerary = Itinerary.find(params[:id])
     @activities = @itinerary.activities

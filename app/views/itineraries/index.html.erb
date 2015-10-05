@@ -1,3 +1,14 @@
-<% @all.each do |itinerary|%>
-    <%=itinerary.name  %>
-<% end %>
+<div class="panel panel-default col-xs-12 col-ms-4">
+  <div class="switch-button panel-body" id="all-itineraries-button">
+    <h2>All itineraries</h2>
+  </div>
+</div>
+
+
+<div id="all-itineraries">
+  <% @all.each do |itinerary|%>
+    <% if itinerary.activities.length>0 && itinerary.name!="" && itinerary.name!=nil%>
+      <%= link_to "#{itinerary.name}","/itineraries/#{itinerary.id}", method:"get"  %> <br>
+    <% end %>
+  <% end %>
+</div>
