@@ -1,7 +1,11 @@
+<% if @search_result.empty? %>
+Sorry, no itineraries match your search.
+<% else %>
 Here are itineraries that match your search criteria:
 
-<ul>
-<% @search_result.each do |result| %>
-  <li> <%= link_to "#{result[0]}","/itineraries/#{result[1]}", method:"get"  %> </li>
+  <ul>
+  <% @search_result.each do |result| %>
+    <li> <%= link_to "#{result[0]}","/itineraries/#{result[1]}", method:"get"  %> </li>
+  <% end %>
+  </ul>
 <% end %>
-</ul>
