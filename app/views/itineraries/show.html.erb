@@ -1,9 +1,37 @@
-<ol>
-  <% @biz_info.each do |info| %>
-  <li><p>
-  <a href="<%= info.url %>"><%= info.name %></a><br>
-    <%= info.display_phone %><br>
-    <%= info.location.display_address.split(", ").join(", ") %>
-    </p></li>
-<% end %>
+<div class="panel panel-default col-xs-12 col-ms-4">
+  <div class="switch-button panel-body" id="all-itineraries-button">
+    <h2>All itineraries</h2>
+  </div>
+</div>
+
+
+<div id="all-itineraries">
+  <% @all.each do |itinerary|%>
+    <% if itinerary.activities.length>0 && itinerary.name!=""%>
+      <%= link_to "#{itinerary.name}","/itineraries/#{itinerary.id}", method:"get"  %> <br>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="panel panel-default col-xs-12 col-ms-4">
+  <div class="switch-button panel-body" id="current-itinerary-button">
+    <h2>Your Itinerary</h2>
+  </div>
+</div>
+
+<div id="current-itinerary">
+  <h3><%= @itinerary.name %> </h3>
+  <ol>
+    <% @biz_info.each do |info| %>
+    <li><p>
+    <a href="<%= info.url %>"><%= info.name %></a><br>
+      <% if info.location.keys.include?("display_phone")  %>
+        <%= info.display_phone %><br>
+      <% else %>
+        <%= "No Phone Number" %><br>
+      <% end %>  
+      <%= info.location.display_address.split(", ").join(", ") %>
+      </p></li>
+  <% end %>
+>>>>>>> Stashed changes
 </ol>
