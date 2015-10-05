@@ -1,7 +1,7 @@
 class ItinerariesController < ApplicationController
 
   def index
-    @all=Itinerary.all
+    @all = Itinerary.all
   end
 
   def new
