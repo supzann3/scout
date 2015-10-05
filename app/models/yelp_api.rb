@@ -28,10 +28,12 @@ class YelpApi
 
   def search
     @results = @client.search_by_coordinates(@location, @params).businesses
+    rescue
   end
 
   def search_by_address
     @results = @client.search(@address,@params).businesses
+    rescue
   end
 
   def business(id)

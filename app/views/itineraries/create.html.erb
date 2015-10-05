@@ -11,7 +11,8 @@
     <% @activities.each_with_index do |activity,i| %>
       <li id="li<%= i %>">
         <div class="item" id="item<%= i %>">
-          <%= activity[i].name %>, <%= activity[i].location.city %>, <%= activity[i].rating %>
+          <a href="<%= activity[i].url %>"><%= activity[i].name %></a><br>
+          <%= activity[i].location.city %>, <%= activity[i].rating %>
           <%= hidden_field_tag "activity_id", activity[i].id %>
           <%= hidden_field_tag "lat", "#{activity[i].location.coordinate.latitude}" %>
           <%= hidden_field_tag "lng", "#{activity[i].location.coordinate.longitude}" %>

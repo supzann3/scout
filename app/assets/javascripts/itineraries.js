@@ -1,11 +1,8 @@
 $(function() {
   $( "#each_activity" ).sortable({
-     update: function(event, ui) {
-          console.log('update: '+ui.item.index());
+     function(event, ui) {
+        console.log(ui.item.index());
       },
-      start: function(event, ui) {
-          console.log('start: ' + ui.item.index());
-      }
   });
   $( "#each_activity" ).disableSelection();
 });
@@ -16,7 +13,6 @@ function initMap() {
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'gmap'}}, function(){
     directionsDisplay.setMap(handler.getMap());
-    handler.fitMapToBounds();
   });
     calcRoute(directionsService, directionsDisplay);
   $('#refresh-map').on("click", function() {
