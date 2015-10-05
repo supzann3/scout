@@ -11,8 +11,11 @@
 </div><br><br>
 
 <div class="col-md-4">
+  <div id="name-itinerary">
   <%= label_tag 'Name of Your Itinerary' %>
-    <%= text_field_tag(:itineraryName, nil, placeholder: 'Name', required:"required") %>
+    <%= text_field_tag(:itineraryName, nil, required:true, placeholder: 'Name') %>
+  </div>
+
   <ol id="each_activity">
     <% @activities.each_with_index do |activity,i| %>
       <li id="li<%= i %>">
