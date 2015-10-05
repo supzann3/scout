@@ -1,7 +1,7 @@
 $(function() {
   $( "#each_activity" ).sortable({
      function(event, ui) {
-          console.log(ui.item.index());
+        console.log(ui.item.index());
       },
   });
   $( "#each_activity" ).disableSelection();
@@ -66,13 +66,23 @@ function saveItinerary() {
     $('.ui-sortable-handle #activity_id').each(function() {
       activities.push($(this).val());
   });
+  var itineraryName=$('#itineraryName').val();
   $.ajax({
     url: "/itineraries",
     type: "POST",
-    data: {activity_ids: activities},
+    data: {name:itineraryName,activity_ids: activities},
     dataType: "script",
     success: function(resp){
       $("#save-itinerary").replaceWith("");
     }
   });
 }
+
+$(document).ready(function(){
+  $('#all-itineraries-button').click(function(e){
+    $('#all-itineraries').toggle();
+  });
+  $('#current-itinerary-button').click(function(e){
+    $('#current-itinerary').toggle();
+  });
+});
