@@ -13,7 +13,6 @@ function initMap() {
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'gmap'}}, function(){
     directionsDisplay.setMap(handler.getMap());
-    handler.fitMapToBounds();
   });
     calcRoute(directionsService, directionsDisplay);
   $('#refresh-map').on("click", function() {

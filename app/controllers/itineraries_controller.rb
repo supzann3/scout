@@ -24,7 +24,7 @@ class ItinerariesController < ApplicationController
       @search.each do |k,v|
         yelp.set_params(v["term"], v["tag"], params["sort"])
         @user_address == "" ? yelp.search : yelp.search_by_address
-        if yelp.results == []
+        if yelp.results == [] || yelp.results == nil
           flash.now[:alert] ||= []
           flash.now[:alert] << "'#{v["tag"].capitalize} - #{v["term"]}' returned 0 results."
         else
