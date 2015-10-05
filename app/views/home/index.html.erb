@@ -4,6 +4,12 @@
  </script>
  <% end %>
 
+<%= form_tag(search_index_path, method: "get", id: "search_key") do %>
+  <%= text_field_tag "search_key" %>
+  <%= submit_tag 'Search for an Itinerary' %>
+<% end %>
+
+
 <%= form_tag(itineraries_path, id: "activity_form") do %>
   <%= radio_button_tag(:sort, 1, true) %>
   <%= label_tag(:sort_1, "Closest Distance") %>

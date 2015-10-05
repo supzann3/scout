@@ -24,6 +24,8 @@ gem 'gmaps4rails'
 
 gem 'jquery-ui-rails'
 
+gem 'fuzzy-string-match', require: "fuzzystringmatch"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
