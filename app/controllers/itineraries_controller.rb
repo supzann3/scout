@@ -1,7 +1,7 @@
 class ItinerariesController < ApplicationController
 
   def index
-    @all=Itinerary.all
+    @all = Itinerary.all
   end
 
   def new
@@ -23,11 +23,11 @@ class ItinerariesController < ApplicationController
 
       @search.each do |k,v|
         yelp.set_params(v["term"], v["tag"], params["sort"])
-        if @user_address == ""
-          yelp.search
-          @activities << yelp.results
+        @user_address == "" ? yelp.search : yelp.search_by_address
+        if yelp.results == []
+          flash.now[:alert] ||= []
+          flash.now[:alert] << "'#{v["tag"].capitalize} - #{v["term"]}' returned 0 results."
         else
-          yelp.search_by_address
           @activities << yelp.results
         end
       end
@@ -44,7 +44,7 @@ class ItinerariesController < ApplicationController
   end
 
   def show
-    @all=Itinerary.all
+    @all = Itinerary.all
     @biz_info = []
     @itinerary = Itinerary.find(params[:id])
     @activities = @itinerary.activities

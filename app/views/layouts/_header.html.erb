@@ -2,7 +2,12 @@
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
+  <p class="alert alert-danger">
+    <% if alert.class == Array %>
+      <%= alert.join("<br>").html_safe %></p>
+    <% else %>
+      <%= alert %>
+    <% end %>
 <% end %>
 
 <% if user_signed_in? %>
