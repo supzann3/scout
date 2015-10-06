@@ -31,3 +31,5 @@
 //= require skrollr.min
 //= require main
 //= require_tree .
+//= require marketclusterer
+//= require jquery-ui

@@ -4,19 +4,22 @@
     <h2>Your Current Itinerary</h2>
   </div>
 
-<div id="current-itinerary">
+<div id="current-itinerary" class="col-md-4">
   <h3><%= @itinerary.name %> </h3>
   <ol>
     <% @biz_info.each do |info| %>
-    <li><p>
+    <li class="ui-sortable-handle"><p>
     <a href="<%= info.url %>"><%= info.name %></a><br>
-      <% if info.location.keys.include?("display_phone")  %>
+      <% if info.keys.include?("display_phone")  %>
         <%= info.display_phone %><br>
       <% else %>
         <%= "No Phone Number" %><br>
       <% end %>
       <%= info.location.display_address.split(", ").join(", ") %>
+      <%= hidden_field_tag "lat", "#{info.location.coordinate.latitude}" %>
+      <%= hidden_field_tag "lng", "#{info.location.coordinate.longitude}" %>
       </p></li>
   <% end %>
 </ol>
 </div>
+<%= render 'map' %>
