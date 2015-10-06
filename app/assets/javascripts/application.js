@@ -11,10 +11,23 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
-//= require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/.
-//= require_tree .
 //= require underscore
 //= require gmaps/google
 //= require jquery-ui
+// require bootstrap.min
+//= require hover-dropdown
+//= require jquery.easing.min
+//= require jquery.mixitup.min
+//= require scrollReveal
+//= require owl.carousel.min
+//= require jquery.magnific-popup.min
+//= require jquery.snippet.min
+//= require jquery.fitvids
+//= require style-switcher
+//= require activate-snippet
+//= require skrollr.min
+//= require main
+//= require_tree .

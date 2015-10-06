@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Raleway Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Denis Samardjiev">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <style type="text/css">
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+</style>
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    </head>
+    
+<body data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
+	<a class="brand" href="#">Raleway</a> <!-- TIP: Change this for the name of your file -->
+     	<div class="nav-collapse">
+        <ul class="nav">
+              <li><a href="#top" class="active">Top</a></li>
+              <li><a href="#markup">Markup</a></li>
+              <li><a href="#styles">Styles</a></li>
+              <li><a href="#javascript">JavaScript</a></li>
+              <li><a href="#credits">Credits</a></li>
+          </ul>
+</div>
+	</div>
+		</div>
+			</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container">
+    
+	<div class="masthead">
+	    <h1>Raleway - HTML5 Template</h1>
+	    <p class="marketing-byline">A template crafted by Denis Samardjiev</p>
+	    <p>A highly flexible mega bootstrap template. With features like parallax, animations, sortable portfolio, boxed or full-width, colors, footer and nav options and over 80 pages of awesomeness for you to use!</p>
+	</div> <!-- masthead -->
+	
+   <div id="intro">
+    <p class="highlight hero-unit">Thank you for purchasing. If you have any questions that are beyond the scope of this help file email me at <b>dimitrovinc@outlook.com</b></p>
+  </div> <!-- intro -->
+      
+<section id="markup">
+	<div class="page-header">
+	  <h1>Markup <small>Markup customization and highlights</small></h1>
+	</div>
+	
+    <div class="alert alert-info"> <a class="close" data-dismiss="alert">×</a> <strong>Remember!</strong> The features / plugins are explained on the LIVE corresponding features pages. And also the githubs/websites are linked below.</div>
+
+    <hr />
+
+    <div class="row">
+      <div class="span3">
+        <h3>General Markup</h3>
+        <p> The general template structure is the same throughout the template. Simply remove the CSS files you do not need (colors and full or boxed width) and customize the page accordingly. </p>
+      </div>
+
+<div class="span9">
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;!-- Meta Info --&gt;
+  &lt;!-- Apple Touch Icons --&gt;
+  &lt;!-- Title --&gt;
+  &lt;!-- CSS Files --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Royal Preloader --&gt;
+  &lt;!-- Style Switcher --&gt;
+  &lt;!-- Boxed / Full Width Wrappers --&gt;
+    &lt;!-- Header (top bar, navigation, and breadcrumbs) --&gt;
+    &lt;!-- Content Sections --&gt;
+    &lt;!-- Footer --&gt;
+  &lt;!-- End Boxed / Full Width Wrappers --&gt;
+  &lt;!-- JS Files --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      </div>
+        </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="span3">
+        <h3>Carousel Item Structure</h3>
+        <p>The home page carousel structure is pretty basic, there is an div commented with Item BG where you will set your background. That same div is used for the parallax on that carousel item <code>data-0="background-position:0px 0px;" data-500="background-position:0px -250px;"</code> we are using <a href="http://aliensix.com/raleway/features-parallax.html" target="_blank">skrollr.js</a> for this.</p>
+        <p>We are also using animate.css to animate slides: <code>class="fadeInRight-animated" data-animation="fadeInRight"</code> read more about the animations <a href="http://aliensix.com/raleway/features-animations.html" target="_blank">here</a>.</p>
+      </div>
+
+<div class="span9">
+<pre class="prettyprint linenums">
+&lt;!-- Begin Item 1 --&gt;
+&lt;div class="item active"&gt;
+  &lt;!-- Item BG --&gt;
+  &lt;div class="background-main" style="background-image:url('images/backgrounds/bg1.png');" data-0="background-position:0px 0px;" data-500="background-position:0px -250px;"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="row carousel-content center-vertically-right"&gt;
+        &lt;!-- Content --&gt;
+        &lt;div class="fadeInRight-animated" data-animation="fadeInRight"&gt;
+          &lt;div class="carousel-description col-sm-5"&gt;
+            Content
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;&lt;!-- /content container --&gt;
+    &lt;/div&gt;&lt;!-- /container --&gt;
+  &lt;/div&gt;&lt;!-- /bg div --&gt;
+&lt;/div&gt;&lt;!-- /item --&gt;
+&lt;!-- End Item 1 --&gt;
+</pre>
+      </div>
+        </div>
+
+    <hr />
+
+<div class="row">
+    <div class="span3">
+  <h3>Navigation Dropdowns</h3>
+  <p>The navigation has steep dropdown ability, see the structure here of a dropdown inside the navbar here:</p>
+</div>
+
+<div class="span9">
+<pre class="prettyprint linenums">
+&lt;li class="dropdown active"&gt;
+  &lt;a href="index.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true"&gt;Link&lt;span class="fa fa-angle-down dropdown-arrow"&gt;&lt;/span&gt;&lt;/a&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Sub Link&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="dropdown-submenu"&gt;
+      &lt;a class="trigger"&gt;Sub Link w Sub Link&lt;/a&gt;
+      &lt;ul class="dropdown-menu"&gt;
+        &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Sub Link&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;
+</pre>
+      </div>
+        </div>
+
+</section> <!-- Markup -->
+      
+
+<section id="styles">
+    <div class="page-header">
+       <h1>Styles <small>Styles customization and highlights</small></h1>
+     </div>
+<div class="row">
+    <div class="span3">
+  <h3>Stylesheets</h3>
+  <p>Here's a list of the stylesheet files I'm using with this template. Not listed here are the colors CSS files and the full/boxed width CSS files. You can find more information opening each file or visiting the links:</p>
+</div>
+<div class="span9">
+        <table class="table table-bordered table-striped">
+              <thead>
+            <tr>
+                  <th>File Name</th>
+                  <th>Description</th>
+                </tr>
+          </thead>
+            <tbody>
+              <tr>
+                <td><code>bootstrap.min.css</code></td>
+                <td>Bootstrap main CSS file.</td>
+              </tr>
+              <tr>
+                <td><code>style.css</code></td>
+                <td>Main theme CSS file.</td>
+              </tr>
+              <tr>
+                <td><code>bootstrap-social.css</code></td>
+                <td>Bootstrap social buttons CSS file. <a href="http://lipis.github.io/bootstrap-social/" target="_blank">Docs</a> - <a href="http://aliensix.com/raleway/features-buttons-social.html" target="_blank">Features Page</a></td>
+              </tr>
+              <tr>
+                <td><code>animate.min.css</code></td>
+                <td>Animate.css animation plugin file. <a href="https://github.com/daneden/animate.css" target="_blank">Docs</a> - <a href="http://aliensix.com/raleway/features-animations.html" target="_blank">Features Page</a></td>
+              </tr>
+              <tr>
+                <td><code>owl.carousel.css</code></td>
+                <td>Owl carousel main CSS file. <a href="www.owlcarousel.owlgraphic.com" target="_blank">Docs</a></td>
+              </tr>
+              <tr>
+                <td><code>jquery.snippet.css</code></td>
+                <td>Syntax highlighter CSS file. <a href="http://steamdev.com/snippet/" target="_blank">Docs</a></td>
+              </tr>
+              <tr>
+                <td><code>buttons.css</code></td>
+                <td>Buttons library CSS file. <a href="http://unicorn-ui.com/buttons/" target="_blank">Docs</a> - <a href="http://aliensix.com/raleway/features-buttons-library.html" target="_blank">Features Page</a></td>
+              </tr>
+              <tr>
+                <td><code>style-switcher.css</code></td>
+                <td>Style switcher CSS file.</td>
+              </tr>
+              <tr>
+                <td><code>ionicons.min.css</code></td>
+                <td>Ionicons icon fonts CSS file <a href="http://aliensix.com/raleway/Ionicons-v1.4.1-Cheatsheet.html" target="_blank">Docs</a> - <a href="http://aliensix.com/raleway/features-icons-ionicons.html" target="_blank">Features Page</a></td>
+              </tr>
+              <tr>
+                <td><code>font-awesome.css</code></td>
+                <td>Fontawesome icon fonts CSS file <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Docs</a> - <a href="http://aliensix.com/raleway/features-icons-fontawesome.html" target="_blank">Features Page</a></td>
+              </tr>
+              <tr>
+                <td><code>royal_preloader.css</code></td>
+                <td>Preloader CSS file.</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+        </div>
+    <hr />
+    <div class="row">
+	<div class="span3">
+	   <h3>CSS Structure</h3>
+	   <p>Style.css contains all of the specific stylings for the template, the table of contents is listed to the right. If you are editing styles 99% of changes will be done here.</p>
+	</div>
+
+<div class="span9">	
+<pre class="prettyprint linenums">
+/* =Table of Contents
+--------------------------------------------------------------
+  =Common Styles
+  =Typography
+  =Buttons
+  =Alerts
+  =Icon Fonts
+  =Navigation
+  =Sidebar Navigation
+  =Forms
+  =Zoom Fade
+  =Carousel
+  =Quote Carousel
+  =Team Carousel
+  =Owl Carousel
+  =Heading
+  =Header 1 + 2
+  =Header Parallax
+  =Panels
+  =Tabs
+  =Pricing Tables
+  =Call to Action
+  =Accordion
+  =Content Section
+  =Parallax Content
+  =Timeline
+  =Thumbnails
+  =Shadows
+  =Dividers
+  =Modals
+  =Labels and Badges
+  =Progress Bars
+  =Content Sections
+  =Team
+  =Recent Posts
+  =Clients
+  =404
+  =Top Bar
+  =Portfolio
+  =Comments
+  =Blog
+  =Portfolio
+  =Footer
+  =Media Queries
+*/
+
+/* =Section
+-------------------------------------------------------------- */
+
+/* =Section
+-------------------------------------------------------------- */
+					</pre>
+      </div>
+        </div>
+  </section>
+      <!-- Styles -->
+      
+      <section id="javascript">
+	<div class="page-header">
+	  <h1>JavaScript <small>JavaScript customization and highlights</small></h1>
+	</div>
+	<div class="row">
+	  <div class="span3">
+	    <h3>JavaScript Files</h3>
+	    <p>These are the JS files used in this theme, follow links inside of credits sections for the docs.</p>
+	  </div>
+	  <div class="span9">
+	    <table class="table table-bordered table-striped">
+	      <thead>
+	        <tr>
+	          <th>Tag</th>
+	          <th>Description</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr>
+	          <td><code>jquery.min.js</code></td>
+	          <td>jQuery is a Javascript library, version 2.1.3 is used in this theme.</td>
+	        </tr>
+	        <tr>
+	          <td><code>bootstrap.min.js</code></td>
+	          <td>The bootstrap main JS file.</td>
+	        </tr>
+	        <tr>
+            <td><code>jquery.easing.min.js</code></td>
+            <td>Required script for the theme.</td>
+          </tr>
+          <tr>
+            <td><code>jquery.mixitup.min.js</code></td>
+            <td>JS used for portfolio sorting and transitions.</td>
+          </tr>
+          <tr>
+            <td><code>scrollReveal.js</code></td>
+            <td>Script used to activate animations when in viewport.</td>
+          </tr>
+          <tr>
+            <td><code>owl.carousel.min.js</code></td>
+            <td>A carousel plugin used in the theme.</td>
+          </tr>
+          <tr>
+            <td><code>jquery.magnific-popup.min.js</code></td>
+            <td>Lightbox script used to open imgs + video on any link.</td>
+          </tr>
+          <tr>
+            <td><code>jquery.snippet.min.js</code></td>
+            <td>Syntax JS plugin.</td>
+          </tr>
+          <tr>
+            <td><code>jquery.fitvids.js</code></td>
+            <td>JS script for responsive video.</td>
+          </tr>
+          <tr>
+            <td><code>style-switcher.js</code></td>
+            <td>JS script for the style switcher.</td>
+          </tr>
+          <tr>
+            <td><code>activate-snippet.js</code></td>
+            <td>Activates syntax plugin.</td>
+          </tr>
+          <tr>
+            <td><code>skrollr.min.js</code></td>
+            <td>Very flexible JS plugin used for parallax + more.</td>
+          </tr>
+          <tr>
+            <td><code>royal_preloader.min.js</code></td>
+            <td>The preloader plugin.</td>
+          </tr>
+          <tr>
+            <td><code>main.js</code></td>
+            <td>Theme JS file.</td>
+          </tr>
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+  <hr />
+  <div class="row">
+  <div class="span3">
+    <h3>Magnific Popup Lightbox</h3>
+    <p>This is the js activating our image zoom, simply add class <code>image-zoom-link</code> to your <code>a</code> tag and the link to your image as the href. It works the same way for videos and maps as well.</p>
+  </div>
+<div class="span9">
+<pre class="prettyprint js linenums:103">
+// image zoom
+$(document).ready(function() {
+    $('.image-zoom-link').magnificPopup({
+        type: 'image',
+        mainClass: 'mfp-fade',
+        fixedContentPos: false
+    });
+});
+
+// video zoom links
+$(document).ready(function() {
+    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
+    });
+});
+</pre>
+      </div>
+        </div>
+
+    <hr />
+
+  <div class="row">
+  <div class="span3">
+    <h3>Mixitup.js portfolio code</h3>
+    <p>This is the js activating our portfolio sorting.</p>
+  </div>
+<div class="span9">
+<pre class="prettyprint js linenums:103">
+// run mixitup portfolio
+$(function() {
+    $('#myPortfolio').mixitup({
+        targetSelector: '.item',
+        transitionSpeed: 600
+    });
+});
+</pre>
+      </div>
+        </div>
+
+    <hr />
+
+  <div class="row">
+  <div class="span3">
+    <h3>Skrollr.js code</h3>
+    <p>This is the js activating skrollr.js used for parallax (disabled on mobile) and many other features, check out the github in the credits for more info.</p>
+  </div>
+<div class="span9">
+<pre class="prettyprint js linenums:103">
+//activate skrollr.js
+$(function() {
+    if ($(window).width() > 1024) {
+        skrollr.init({
+            forceHeight: false,
+            smoothScrolling: true,
+            smoothScrollingDuration: 1500
+        });
+    }
+});
+</pre>
+      </div>
+
+        </div>
+            <div class="alert alert-info"> <a class="close" data-dismiss="alert">×</a> <strong>Notice:</strong> The remaining JS inside main.js is required for full functionality but does not need any customization. Everything in this theme works out the box.</div>
+  </section><!-- JavaScript -->
+
+	<section id="credits">
+	  <div class="page-header">
+	    <h1>Credits Files <small>Some of your credits and sources</small></h1>
+	  </div>
+	  <p>I've used the following images, icons or other files as listed.</p>
+	  <h3>JavaScript</h3>
+	  <ol>
+          <li><a href="https://jquery.com/" target="_blank">jquery.min.js</a> <small>&mdash; jQuery is a Javascript library, version 2.1.3 is used in this theme.</small></li>
+          <li><a href="http://getbootstrap.com/" target="_blank">bootstrap.min.js</a> <small>&mdash; The bootstrap main JS file.</small></li>
+          <li><a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">jquery.easing.min.js</a> <small>&mdash; Required script for the theme.</small></li>
+          <li><a href="https://mixitup.kunkalabs.com/" target="_blank">jquery.mixitup.min.js</a> <small>&mdash; JS used for portfolio sorting and transitions.</small></li>
+          <li><a href="http://scrollrevealjs.org/" target="_blank">scrollReveal.js</a> <small>&mdash; Script used to activate animations when in viewport.</small></li>
+          <li><a href="http://www.owlcarousel.owlgraphic.com/" target="_blank">owl.carousel.min.js</a> <small>&mdash; A carousel plugin used in the theme.</small></li>
+          <li><a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">jquery.magnific-popup.min.js</a> <small>&mdash; Lightbox script used to open imgs + video on any link.</small></li>
+          <li><a href="http://steamdev.com/snippet/" target="_blank">jquery.snippet.min.js</a> <small>&mdash; Syntax JS plugin.</small></li>
+          <li><a href="http://fitvidsjs.com/ target="_blank"">jquery.fitvids.js</a> <small>&mdash; JS script for responsive video.</small></li>
+          <li><a href="https://github.com/Prinzhorn/skrollr target="_blank"">skrollr.min.js</a> <small>&mdash; Very flexible JS plugin used for parallax + more.</small></li>
+	  </ol>
+	  <h3>CSS</h3>
+	  <ol>
+	    <li><a href="http://lipis.github.io/bootstrap-social/" target="_blank">bootstrap-social.css</a> <small>&mdash; Bootstrap social buttons CSS file.</small> </li>
+      <li><a href="https://github.com/daneden/animate.css" target="_blank">animate.min.css</a> <small>&mdash; Animate.css animation plugin file.</small> </li>
+      <li><a href="http://owlcarousel.owlgraphic.com" target="_blank">owl.carousel.css</a> <small>&mdash; Owl carousel main CSS file.</small> </li>
+      <li><a href="http://steamdev.com/snippet/" target="_blank">jquery.snippet.css</a> <small>&mdash; Syntax highlighter CSS file.</small> </li>
+      <li><a href="http://unicorn-ui.com/buttons/" target="_blank">buttons.css</a> <small>&mdash; Buttons library CSS file.</small> </li>
+      <li><a href="http://aliensix.com/raleway/Ionicons-v1.4.1-Cheatsheet.html" target="_blank">ionicons.min.css</a> <small>&mdash; Ionicons icon fonts CSS file</small> </li>
+      <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">font-awesome.css</a> <small>&mdash; Fontawesome icon fonts CSS file.</small> </li>
+	  </ol>
+	  <h3>Images</h3>
+	  <ol>
+	    <li><a href="http://shutterstock.com">Shutterstock</a> <small>&mdash; Images used in this template.</small></li>
+      <li><a href="https://dribbble.com/pierreborodin">Pierre Borodin</a> <small>&mdash; Images used in this template.</small></li>
+	  </ol>
+	</section><!-- Credits -->
+
+      <hr />
+
+<div class="goodbye">
+    <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on Wrapbootstrap or any of the plugins used, you might consider visiting the Stackoverflow or the Github page of the plugin and asking your question.</p>
+  </div>
+
+      <hr />
+
+<footer>
+    <p>&copy; Denis Samardjiev 2015</p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-transition.js"></script> 
+<script src="assets/js/bootstrap-alert.js"></script> 
+<script src="assets/js/bootstrap-modal.js"></script> 
+<script src="assets/js/bootstrap-dropdown.js"></script> 
+<script src="assets/js/bootstrap-scrollspy.js"></script> 
+<script src="assets/js/bootstrap-tab.js"></script> 
+<script src="assets/js/bootstrap-tooltip.js"></script> 
+<script src="assets/js/bootstrap-popover.js"></script> 
+<script src="assets/js/bootstrap-button.js"></script> 
+<script src="assets/js/bootstrap-collapse.js"></script>
+</body>
+</html>

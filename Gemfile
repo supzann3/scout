@@ -26,6 +26,10 @@ gem 'jquery-ui-rails'
 
 gem 'fuzzy-string-match', require: "fuzzystringmatch"
 
+gem 'bootstrap-sass', '~> 3.3.5'
+
+gem 'font-awesome-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -70,7 +74,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'bootstrap-sass', '~> 3.1.1'
 gem 'devise'
 gem 'airbrake'
 gem 'figaro'
