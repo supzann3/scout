@@ -36,6 +36,7 @@ class ItinerariesController < ApplicationController
         session[:itinerary] = params
         render :js => "window.location = '#{new_user_registration_path}'"
       else
+        binding.pry
         @itinerary = Itinerary.create(name:params["name"],user_id:current_user.id)
         @itinerary.add_activities(params["activity_ids"])
         render :js => "window.location = '#{itinerary_path(@itinerary)}'"
