@@ -7,7 +7,7 @@
   <h3><%= @itinerary.name %> </h3>
   <ol>
     <% @biz_info.each do |info| %>
-    <li><p>
+    <li class="ui-sortable-handle"><p>
     <a href="<%= info.url %>"><%= info.name %></a><br>
       <% if info.keys.include?("display_phone")  %>
         <%= info.display_phone %><br>
@@ -15,6 +15,8 @@
         <%= "No Phone Number" %><br>
       <% end %>
       <%= info.location.display_address.split(", ").join(", ") %>
+      <%= hidden_field_tag "lat", "#{info.location.coordinate.latitude}" %>
+      <%= hidden_field_tag "lng", "#{info.location.coordinate.longitude}" %>
       </p></li>
   <% end %>
 </ol>
