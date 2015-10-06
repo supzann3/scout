@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :itineraries
   resources :search
+  resources :users
 end

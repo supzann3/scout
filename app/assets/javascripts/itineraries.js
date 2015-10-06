@@ -91,7 +91,7 @@ $(document).ready(function(){
     $('#current-itinerary').toggle();
   });
 
-  // $('input:text').bind('focus blur', function() {
+  // $('#itineraryName').on('focus blur', function() {
   //    $(this).toggleClass('red');
   // });
 

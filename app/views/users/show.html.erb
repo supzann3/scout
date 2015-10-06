@@ -1,0 +1,12 @@
+<div class="panel panel-default col-xs-12 col-ms-4">
+    <div class="switch-button panel-body" id="user-itinerary-button">
+      <h2>All Your Itineraries</h2>
+  </div>
+
+<div id="user-itinerary">
+  <% @user_itinerary.each do |itinerary| %>
+  <% if itinerary.activities.length>0 && itinerary.name!=nil && itinerary.name!="" %>
+    <%= link_to "#{itinerary.name}","/itineraries/#{itinerary.id}", method:"get"  %> <br>
+    <% end %>
+  <% end %>
+</div>
