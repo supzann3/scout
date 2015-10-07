@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
  end
 
  def lat_lng
+   binding.pry
     @lat_lng = cookies[:lat_lng].split("|") unless cookies[:lat_lng] == nil
   end
 
