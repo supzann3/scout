@@ -1,7 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
+@import "ionicons.min";
+@import "royal_preloader.css";
 @import "style";
 @import "bootstrap-social";
 @import "animate.min";
@@ -11,10 +12,12 @@
 @import "style-switcher";
 @import "magnific-popup.css";
 
-@import "ionicons.min";
+html,body {
+  height: 100%
+}
 
 #main-content {
-  height: 700px;
+  height: 20%;
 }
 
 #search_form_header {
