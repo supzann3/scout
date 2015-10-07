@@ -9,9 +9,126 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+<!-- Begin Header -->
+<header>
+
+  <!-- Begin Top Bar -->
+  <div class="top-bar">
+    <div class="container container-header">
+      <div class="row top-bar-row">
+        <!-- Address and Phone -->
+        <div class="col-sm-7 hidden-xs contact-info">
+
+        </div>
+        <!-- Social Buttons -->
+        <div class="col-sm-5 text-right topmenu-holder">
+                  <ul class="topbar-list list-inline">
+                    <!-- <li><a data-toggle="modal" data-target="#login">Login</a></li> -->
+                    <li><%= link_to 'Log In', new_user_session_path %></li>
+                    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+                    <li>
+                    <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div><!--/row -->
+    </div><!--/container header -->
+  </div><!--/top bar -->
+  <!-- End Top Bar -->
+
+  <!-- Login -->
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="loginLabel">Login</h4>
+              </div>
+              <div class="modal-body">
+                <form role="form">
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox"> Do you flex?
+                      </label>
+                  </div>
+              </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-rw btn-primary">Login</button>
+              </div>
+          </div><!-- /modal content -->
+      </div><!-- /modal dialog -->
+  </div><!-- /modal holder -->
+  <!-- End Login -->
+
+    <!-- Begin Navigation -->
+  <div class="navbar">
+    <div class="container container-header">
+      <div class="navbar-header">
+        <!-- Brand -->
+        <!-- <a href="index.html" class="navbar-brand"> -->
+        <div id="site_title"><h1><%= link_to "scoutr", root_path %> <%# image_tag "logo.png", alt:"Raleway Responsive Parallax Bootstrap 3 Template" %></h1></div>
+        <!-- </a> -->
+        <!-- Mobile Navigation -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+        </button>
+      </div><!-- /navbar header -->
+
+      <!-- Main Navigation -->
+      <nav class="navbar-collapse collapse navHeaderCollapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li id="search_form_header">
+            <%= form_tag(search_index_path, method: "get", id: "search_key") do %>
+              <%= text_field_tag "search_key" %>
+              <%= submit_tag 'Search for an Itinerary' %>
+            <% end %>
+          </li>
+          <li class="dropdown active">
+                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true">My Profile<span class="fa fa-angle-down dropdown-arrow"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Option 1: Home</a></li>
+                    <li><a href="index-home.html">Option 2: aHome</a></li>
+                    <li><a href="index-home-b.html">Option 3: bHome</a></li>
+                    <li><a href="index-carousel-subnav.html">Option 4: Carousel Subnav</a></li>
+                    <li><a href="dark-navigation-example.html">Dark Navigation</a></li>
+                    <li class="dropdown-submenu">
+                  <a class="trigger">Footer Options</a>
+                  <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="features-footer-options.html">Dark</a></li>
+                    <li><a tabindex="-1" href="features-footer-options-2.html">Light</a></li>
+                  </ul>
+              </li>
+                </ul>
+              </li>
+
+
+        </ul><!-- /navbar right -->
+      </nav><!-- /nav -->
+
+    </div><!-- /container header -->
+  </div><!-- /navbar -->
+  <!-- End Navigation -->
+
+</header><!-- /header -->
+<!-- End Header -->
