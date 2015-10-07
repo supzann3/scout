@@ -1,11 +1,10 @@
-<div id="itinerary-error">
+<p class="text-danger">
 <% unless @errors == nil %>
-***Put this in dangerous error coloring***<br>
   <% @errors.each do |error| %>
     <%= error %><br>
   <% end %>
 <% end %>
-</div><br><br>
+</p>
 
 <div class="col-md-4">
   <div id="name-itinerary">
