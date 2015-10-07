@@ -13,11 +13,9 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require_tree ../../../vendor/assets/javascripts/.
 //= require underscore
 //= require gmaps/google
 //= require jquery-ui
-// require bootstrap.min
 //= require hover-dropdown
 //= require jquery.easing.min
 //= require jquery.mixitup.min

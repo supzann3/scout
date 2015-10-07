@@ -49,6 +49,10 @@ function initMap() {
 
 function replaceActivity(array,i) {
   var new_item = _.sample(array);
+  $("#item"+i).addClass('animated flipInX');
+  window.setTimeout( function(){
+    $("#item"+i).removeClass('animated flipInX');
+  }, 2000);
   $("#item"+i).html(
     "<a href=" + new_item.hash.url + ">" + new_item.hash.name + "</a><br>" +
     new_item.hash.location.city + ", " + new_item.hash.rating +
