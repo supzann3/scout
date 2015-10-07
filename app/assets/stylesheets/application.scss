@@ -46,3 +46,16 @@ html,body {
 .form_divider {
   margin: 10px;
 }
+
+.item {
+  opacity: 1;
+  border: 1px solid gray;
+  padding: 10px; 
+  margin-top: 10px;
+}
+
+.sortable-placeholder {
+  height: 121px; 
+  line-height: 22.4px;
+  background-color: gray;
+}
