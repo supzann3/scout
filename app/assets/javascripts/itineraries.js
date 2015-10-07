@@ -1,10 +1,11 @@
 $(function() {
-  $( "#each_activity" ).sortable({
-     function(event, ui) {
-        console.log(ui.item.index());
+  $("#each_activity").sortable({
+    placeholder: "sortable-placeholder",
+    function(event, ui) {
+        ui.item.index();
       },
   });
-  $( "#each_activity" ).disableSelection();
+  $("#each_activity").disableSelection();
 });
 
 function initMap() {
