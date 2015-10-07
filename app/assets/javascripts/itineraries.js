@@ -63,10 +63,9 @@ function replaceActivity(array,i) {
 }
 
 function deleteActivity(array,i) {
-  var result = confirm("Delete activity?");
-  if (result) {
-    $("#li"+i).remove();
-  }
+  $("#li"+i).fadeOut(300, function() {
+    $(this).remove();
+  });
 }
 
 function saveItinerary() {

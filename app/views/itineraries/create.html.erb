@@ -23,16 +23,16 @@
           <%= hidden_field_tag "lat", "#{activity[i].location.coordinate.latitude}" %>
           <%= hidden_field_tag "lng", "#{activity[i].location.coordinate.longitude}" %>
         </div>
-        <button type="button" id="replace" onclick="replaceActivity( <%= activity.to_json %>, <%= i %> )">Replace</button>
-        <button type="button" id="replace" onclick="deleteActivity( <%= activity.to_json %>, <%= i %> )">Delete</button>
+        <button type="button" class="btn btn-rw btn-primary btn-xs" id="replace" onclick="replaceActivity( <%= activity.to_json %>, <%= i %> )">Replace</button>
+        <button type="button" class="btn btn-rw btn-primary btn-xs" id="replace" onclick="deleteActivity( <%= activity.to_json %>, <%= i %> )">Delete</button>
       </li>
       <% end %>
   </ol>
 
-<button type="button" id="save-itinerary" onclick="saveItinerary()">Save Itinerary</button><br>
+<button type="button" class="btn btn-default" id="save-itinerary" onclick="saveItinerary()">Save Itinerary</button><br>
 </div>
 
 <div class="col-md-8">
-  <input type="submit" id="refresh-map" value="Refresh Map">
+  <input type="submit" class="btn btn-default btn-xs" id="refresh-map" value="Refresh Map"><br>
   <%= render 'map' %>
 </div>
