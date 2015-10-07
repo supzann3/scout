@@ -13,6 +13,7 @@
 	<title>Scoutr</title>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? %>
 
@@ -253,7 +254,6 @@
 		}
 		window.sr = new scrollReveal( config );
     </script>
-    <%= javascript_include_tag 'application' %>
 	<!-- <script type="text/javascript" src="js/main.js"></script> -->
 </body>
 </html>

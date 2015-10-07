@@ -12,6 +12,11 @@ function deleteCookie(name) {
 }
 
 $(document).ready(function() {
+  var hiddenLocationTag=$('#lat_lng').val();
+  if (hiddenLocationTag === "") {
+    getGeoLocation();
+  }
+    // getGeoLocation();
   $('#location').click(function() {
     deleteCookie("lat_lng=");
     getGeoLocation();
