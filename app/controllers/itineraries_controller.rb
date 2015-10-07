@@ -13,12 +13,13 @@ class ItinerariesController < ApplicationController
       @location_array = lat_lng
       @activities = []
       @search = params["search"]["ids"]
+      @current_location = params["current_location"]
       @user_address = params["address"]
-
-      if @user_address == ""
-        yelp.set_location(@location_array)
+      @loc = ""
+      if @current_location == "false" && @user_address != ""
+        @loc = yelp.set_address(params["address"])
       else
-        yelp.set_address(params["address"])
+        @loc = yelp.set_location(@location_array)
       end
 
       @search.each do |k,v|
