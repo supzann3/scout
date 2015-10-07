@@ -47,6 +47,9 @@ class ItinerariesController < ApplicationController
   def show
     @biz_info = []
     @itinerary = Itinerary.find(params[:id])
+    @user_itinerary=Itinerary.where(user_id:current_user.id)
+    # @user_itinerary=User.find(@itinerary.user_id)
+    # @user_itineraries=@user_itinerary.activities
     @activities = @itinerary.activities
     yelp = YelpApi.new
     @activities.each do |act|
