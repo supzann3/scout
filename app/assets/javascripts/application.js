@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require royal_preloader.min.js
 //= require jquery_ujs
+
 //= require underscore
 //= require gmaps/google
 //= require jquery-ui
