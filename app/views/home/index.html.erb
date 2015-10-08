@@ -12,16 +12,18 @@
 </div>
 <div class="form_divider">
   <%= label_tag "Location: " %><br>
-    <%= radio_button_tag(:current_location, true, true) %>
-    <%= label_tag("Get my current location.") %><br>
-    <%= radio_button_tag(:current_location, false) %>
-    <%= label_tag("Use an address.") %><br>
-</div>
-<div class="form_divider">
-  <%= label_tag "Enter an address:" %>
-  <%= text_field_tag "address" %><br>
-</div>
+    <div><%= radio_button_tag(:current_location, true, true) %>
+    <%= label_tag("Get my current location.") %><br></div>
 
+
+    <div><%= radio_button_tag(:current_location, false, false) %>
+    <%= label_tag("Use an address.") %><br>
+    <div id="reveal-if-active">
+      <%= label_tag "Enter an address:" %>
+      <%= text_field_tag "address" %><br>
+    </div></div>
+
+</div>
   <div id="input_fields_wrap" class="form_divider">
   <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
   <%= text_field_tag "search[ids][0][term]" %><button id="add_field_button">+</button>
