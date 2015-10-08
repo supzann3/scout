@@ -103,7 +103,10 @@ $(document).ready(function(){
   $('#save-itinerary').click(function(){
     var name=$('#itineraryName').val();
       if (name==="") {
-      $('#itineraryName').css('border-color','red');
+        $('#itineraryName').css('border-color','red');
+      }
+      else {
+        $('#itineraryName').css('border-color','blue');
       }
     });
 });
