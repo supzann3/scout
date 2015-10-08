@@ -73,10 +73,18 @@ function deleteActivity(array,i) {
 
 function saveItinerary() {
   var activities = [];
+  var itineraryName=$('#itineraryName').val();
+
     $('.ui-sortable-handle #activity_id').each(function() {
       activities.push($(this).val());
   });
-  var itineraryName=$('#itineraryName').val();
+
+  var name=$('#itineraryName').val();
+    if (name==="") {
+      $('#itineraryName').css('border-color','red');
+    }
+    else {
+      $('#itineraryName').css('border-color','blue');
   $.ajax({
     url: "/itineraries",
     type: "POST",
@@ -86,6 +94,8 @@ function saveItinerary() {
       $("#save-itinerary").replaceWith("");
     }
   });
+  }
+
 }
 
 $(document).ready(function(){
@@ -97,16 +107,4 @@ $(document).ready(function(){
     $('#current-itinerary').toggle();
   });
 
-  // $('#itineraryName').on('focus blur', function() {
-  //    $(this).toggleClass('red');
-  // });
-  $('#save-itinerary').click(function(){
-    var name=$('#itineraryName').val();
-      if (name==="") {
-        $('#itineraryName').css('border-color','red');
-      }
-      else {
-        $('#itineraryName').css('border-color','blue');
-      }
-    });
 });
