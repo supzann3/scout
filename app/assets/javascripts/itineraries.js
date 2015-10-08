@@ -1,7 +1,7 @@
 $(function() {
   $("#each_activity").sortable({
     placeholder: "sortable-placeholder",
-    function(event, ui) {
+    sort: function(event, ui) {
         ui.item.index();
       },
   });
@@ -40,13 +40,15 @@ function initMap() {
     directionsDisplay.setMap(handler.getMap());
     handler.fitMapToBounds();
   });
-    calcRoute(directionsService, directionsDisplay);
-    handler.resetBounds();
+  calcRoute(directionsService, directionsDisplay);
+  handler.resetBounds();
+
   $('#refresh-map').on("click", function() {
     calcRoute(directionsService, directionsDisplay);
     handler.resetBounds();
   });
 }
+
 
 function replaceActivity(array,i) {
   var new_item = _.sample(array);
@@ -98,5 +100,13 @@ $(document).ready(function(){
   // $('#itineraryName').on('focus blur', function() {
   //    $(this).toggleClass('red');
   // });
-
+  $('#save-itinerary').click(function(){
+    var name=$('#itineraryName').val();
+      if (name==="") {
+        $('#itineraryName').css('border-color','red');
+      }
+      else {
+        $('#itineraryName').css('border-color','blue');
+      }
+    });
 });
