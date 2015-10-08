@@ -6,7 +6,7 @@
 <% end %>
 </p>
 
-<div class="col-md-4">
+<div class="col-md-5">
   <div id="name-itinerary">
   <%= label_tag 'Name of Your Itinerary' %>
     <%= text_field_tag(:itineraryName, nil, required:true, placeholder: 'Name') %>
@@ -15,15 +15,17 @@
   <ol id="each_activity">
     <% @activities.each_with_index do |activity,i| %>
       <li id="li<%= i %>">
-        <div class="item" id="item<%= i %>">
+        <div class="item info_card" id="item<%= i %>">
           <a href="<%= activity[i].url %>"><%= activity[i].name %></a><br>
           <%= activity[i].location.city %>, <%= activity[i].rating %>
           <%= hidden_field_tag "activity_id", activity[i].id %>
           <%= hidden_field_tag "lat", "#{activity[i].location.coordinate.latitude}" %>
           <%= hidden_field_tag "lng", "#{activity[i].location.coordinate.longitude}" %>
         </div>
+      <div class="replace_delete_button ">
         <button type="button" class="btn btn-rw btn-primary btn-xs" id="replace" onclick="replaceActivity( <%= activity.to_json %>, <%= i %> )">Replace</button>
         <button type="button" class="btn btn-rw btn-primary btn-xs" id="replace" onclick="deleteActivity( <%= activity.to_json %>, <%= i %> )">Delete</button>
+      </div>
       </li>
       <% end %>
   </ol>
@@ -31,7 +33,7 @@
 <button type="button" class="btn btn-default" id="save-itinerary" onclick="saveItinerary()">Save Itinerary</button><br>
 </div>
 
-<div class="col-md-8">
+<div class="col-md-7">
   <input type="submit" class="btn btn-default btn-xs" id="refresh-map" value="Refresh Map"><br>
   <%= render 'map' %>
 </div>

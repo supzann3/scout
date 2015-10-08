@@ -47,15 +47,20 @@ html,body {
   margin: 10px;
 }
 
-.item {
-  opacity: 1;
-  border: 1px solid gray;
+.info_card {
+  border: 2px solid gray;
   padding: 10px; 
   margin-top: 10px;
+  box-shadow: 10px 10px 5px #888888;
+  height: 150px;
+  display: inline;
 }
 
 .sortable-placeholder {
-  height: 121px; 
-  line-height: 22.4px;
+  height: 150px; 
   background-color: gray;
+}
+
+.replace_delete_button {
+  display: inline;
 }
