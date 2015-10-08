@@ -62,13 +62,14 @@
 	<!-- <link href='css/magnific-popup.css' rel='stylesheet' type='text/css'> -->
 </head>
 <body class="royal_preloader scrollreveal">
+
+	<%= render 'layouts/header' %>
 	<% if notice %>
 	  <p class="alert alert-success"><%= notice %></p>
 	<% end %>
 	<% if alert %>
 	  <p class="alert alert-danger"><%= alert %></p>
 	<% end %>
-	<%= render 'layouts/header' %>
 
 	<!-- Begin Boxed or Fullwidth Layout -->
 	<div id="bg-boxed">
