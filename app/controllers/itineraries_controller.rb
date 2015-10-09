@@ -35,6 +35,7 @@ class ItinerariesController < ApplicationController
     elsif params["activity_ids"]
       if current_user.nil?
         session[:itinerary] = params
+        flash[:alert] = "You must be logged in to save itinerary"
         render :js => "window.location = '#{new_user_registration_path}'"
       else
         @itinerary = Itinerary.create(name:params["name"],user_id:current_user.id)
