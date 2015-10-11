@@ -11,23 +11,24 @@
         </div>
         <!-- Social Buttons -->
         <div class="col-sm-5 text-right topmenu-holder">
-                  <ul class="topbar-list list-inline">
-                    <% if user_signed_in? %>
-                    <li>Logged in as <strong><%= current_user.email %></strong>.</li>
-                    <% else %>
-                    <li><%= link_to 'Log In', new_user_session_path %></li>
-                    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-                    <% end %>
-                    <li>
-                    <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
-                <i class="fa fa-twitter"></i>
-              </a>
-              <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
-                <i class="fa fa-instagram"></i>
-              </a>
-              <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
-                <i class="fa fa-facebook"></i>
-              </a>
+          <ul class="topbar-list list-inline">
+            <% if user_signed_in? %>
+            <li>Logged in as <strong><%= current_user.email %></strong>.</li>
+            <% else %>
+            <li><%= link_to 'Log In', new_user_session_path, remote: true %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path, remote: true %></li>
+            <div id="modal" class="modal fade"></div>
+            <% end %>
+            <li>
+            <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a class="btn btn-social-icon btn-rw btn-primary btn-xs">
+              <i class="fa fa-facebook"></i>
+            </a>
             </li>
           </ul>
         </div>
@@ -59,7 +60,7 @@
           <li id="search_form_header">
             <%= form_tag(search_index_path, method: "get", id: "search_key") do %>
               <%= text_field_tag "search_key" %>
-              <%= submit_tag 'Search for an Itinerary' %>
+              <%= submit_tag 'Search for an Itinerary', class: "btn btn-rw btn-primary btn-xs" %>
             <% end %>
           </li>
 
@@ -82,6 +83,5 @@
     </div><!-- /container header -->
   </div><!-- /navbar -->
   <!-- End Navigation -->
-
 </header><!-- /header -->
 <!-- End Header -->

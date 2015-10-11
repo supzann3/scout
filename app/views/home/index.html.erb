@@ -25,8 +25,8 @@
 
 </div>
   <div id="input_fields_wrap" class="form_divider">
-  <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :alias, :name) %>
-  <%= text_field_tag "search[ids][0][term]", nil, placeholder: "Optional search term" %><button id="add_field_button">+</button>
+  <%= select_tag "search[ids][0][tag]", options_from_collection_for_select(Tag.all, :alias, :name), id: 'select' %>
+  <%= text_field_tag "search[ids][0][term]", nil, placeholder: "Optional search term", id: 'select' %><button id="add_field_button" class="button button-circle button-tiny"><i class="fa fa-plus"></i></button>
 </div>
 <div id="form_submit_button">
   <%= submit_tag 'Search', class: "btn btn-rw btn-primary btn-lg", controller: "application", id:"location", action: "lat_lng" %>
